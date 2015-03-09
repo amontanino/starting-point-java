@@ -24,7 +24,7 @@ angular.module('coursesApp', [])
             date: '23/11/2015',
         }];*/
 
-        //elaborateResult(result);
+        elaborateResult(result);
         //}
 
 
