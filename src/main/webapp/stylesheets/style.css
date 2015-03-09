@@ -29,3 +29,7 @@ input[type="text"] {
 	float: right;
 	margin-right: 100px;
 }
+
+.menu {
+	background: yellow;
+}
