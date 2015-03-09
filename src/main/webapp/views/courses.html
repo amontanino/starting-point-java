@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="coursesApp">
+<head>
+    <title></title>
+    <script src="../javascripts/lib/angular.min.js"></script>
+    <script src="../javascripts/courses.js"></script>
+</head>
+<body ng-controller="coursesController">
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="courses.html">Corsi</a></li>
+    </ul>   
+
+    <ul ng-repeat="current in listOfCourses">
+        <li>
+            <div>
+                Titolo = {{current.title}} <br />
+                Descrizione = {{current.description}} <br />
+                Docente = {{current.teacher}} <br />
+                Prezzo = {{current.price}} <br />
+                Data = {{current.date}} <br />
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
