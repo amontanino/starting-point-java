@@ -1,13 +1,7 @@
 angular.module('coursesApp', [])
-    .controller('coursesController', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+    .controller('coursesController', ['$scope', '$rootScope', '$http', '$window', function ($scope, $rootScope, $http, $window) {
 
-        //$scope.callService = function ()
-        //{
-
-        //"{\"title\": \"test corso\", \"description\": \"corso che parla di JAVA\",\"teacher\": \"docente\", \"price\": \"120euro\", \"date\":\"23/11/2015\"}";
-        // Call web service
-
-
+		var contactEmail = 'info.fittizia@gmail.com';
         function elaborateResult(result) {
             $scope.listOfCourses = result;
         }
@@ -16,17 +10,11 @@ angular.module('coursesApp', [])
        elaborateResult(data);
        })
 
-        /*var result = [{
-            title: 'test corso',
-            description: 'corso che parla di JAVA',
-            teacher: 'docente',
-            price: '10,00 euro',
-            date: '23/11/2015',
-        }];*/
+	   $scope.sendEmail = function(subject) {
+			var link = "mailto:"+ contactEmail
+					 + "?subject=" + escape(subject); 
 
-        //elaborateResult(result);
-        //}
-
-
-
+			$window.location.href = link;
+		 };
+	   
     }]);

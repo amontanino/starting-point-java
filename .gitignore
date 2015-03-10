@@ -7,4 +7,5 @@ target
 *.iws
 *.ipr
 *.iml
+Thumbs.db
 .DS_Store

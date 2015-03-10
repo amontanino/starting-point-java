@@ -1,10 +1,10 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="coursesApp">
 <head>
-    <title>Fittizia</title>
-    <script src="javascripts/lib/angular.min.js"></script>
+	<title>Fittizia</title>
+	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
+    <script src="../javascripts/lib/angular.min.js"></script>
     <script src="../javascripts/courses.js"></script>
 </head>
 <body ng-controller="coursesController">
@@ -16,25 +16,60 @@
             <a href="#">Login </a>
         </div>
     </div>
-    <div class="main_col">
-        <div class="menu">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="courses.html">Corsi</a></li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Fittizia</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="courses.html">Corsi</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
     <div class="content">
     <ul ng-repeat="current in listOfCourses">
-        <li>
-            <div>
-                Titolo = {{current.title}} <br />
-                Descrizione = {{current.description}} <br />
-                Docente = {{current.teacher}} <br />
-                Prezzo = {{current.price}} <br />
-                Data = {{current.startDate}} <br />
-                Durata = {{current.length}} <br />
-            </div>
+        <li>		
+			<div class="list-group">
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Titolo:</h4>
+                        <p class="list-group-item-text">{{current.title}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Descrizione:</h4>
+                        <p class="list-group-item-text">{{current.description}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Docente:</h4>
+                        <p class="list-group-item-text">{{current.teacher}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Prezzo:</h4>
+                        <p class="list-group-item-text">{{current.price}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Data:</h4>
+                        <p class="list-group-item-text">{{current.startDate}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Durata:</h4>
+                        <p class="list-group-item-text">{{current.length}}</p>
+                    </div>
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="sendEmail(current.title + ' - ' + current.description)">
+                        Iscriviti
+                    </button>
+                </div>
         </li>
     </ul>
 

@@ -54,7 +54,7 @@ input[type="text"] {
 .footer {
     text-align: center;
     background: #f7fd4a;
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     bottom: 0;
     font-size: 16px;
@@ -70,7 +70,7 @@ font-weight: bold;
 }
 
 .topCoursesTitle{
-	width: 97%;
+	width: 98%;
 	border: 1px solid black;
 	padding: 10px;
 	text-transform: uppercase;

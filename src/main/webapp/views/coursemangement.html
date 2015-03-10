@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="coursesManagementApp">
+<head>
+	<title>Fittizia</title>
+	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
+    <script src="../javascripts/lib/angular.min.js"></script>
+    <script src="../javascripts/coursesManagement.js"></script>
+</head>
+<body ng-controller="coursesManagementController">
+    <div class="header">
+        <div class="logo">
+            <img src="/images/logo.png" />
+        </div>
+        <div class="login">
+            <a href="#">Login </a>
+        </div>
+    </div>
+    <div class="main_col">
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="courses.html">Corsi</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <form role="form" style="margin-left:100px; margin-top:30px;">
+            <div class="form-group">
+                <label class="control-label">Titolo</label>
+                <input type="text" class="form-control" placeholder="Titolo" ng-model="course.title">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Descrizione</label>
+                <input type="text" class="form-control" placeholder="Descrizione" ng-model="course.description">
+            </div>  
+            <div class="form-group">
+                <label class="control-label">Docente</label>
+                <input type="text" class="form-control" placeholder="Docente" ng-model="course.teacher">
+            </div>     
+            <div class="form-group">
+                <label class="control-label">Prezzo</label>
+                <input type="text" class="form-control" placeholder="Docente" ng-model="course.price">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Start Date</label>
+                <input type="text" class="form-control" placeholder="Start Date" ng-model="course.startDate">
+            </div>    
+            <div class="form-group">
+                <label class="control-label">Durata</label>
+                <input type="text" class="form-control" placeholder="Durata" ng-model="course.length">
+            </div>   
+            <button type="button" class="btn btn-default navbar-btn" ng-click="addCourse()">
+                Iscriviti
+            </button>     
+        </form>
+
+    </div>
+    <div class="footer">
+        <span class="important">Fittizia Srl </span>- Via Lanzoni 13, 27010, Giussago (PV) - Italia <br />
+        Telefono <span class="important">0382 23456778</span> <br />
+        Partita IVA: <span class="important">IT033868135678868 </span><br />
+        Contattaci a <span class="important"><a href="mailto:informazioni@fittizia.it">info.fittizia@gmail.com</a></span>
+    </div>
+</body>
+</html>
+
