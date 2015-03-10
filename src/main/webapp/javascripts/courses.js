@@ -12,7 +12,7 @@ angular.module('coursesApp', [])
 
 	   $scope.sendEmail = function(subject) {
 			var link = "mailto:"+ contactEmail
-					 + "?subject=New%20email " + escape(subject); 
+					 + "?subject=" + escape(subject); 
 
 			$window.location.href = link;
 		 };

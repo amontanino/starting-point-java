@@ -3,6 +3,7 @@
 <head>
 	<title>Fittizia</title>
 	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
     <script src="../javascripts/lib/angular.min.js"></script>
     <script src="../javascripts/courses.js"></script>
 </head>
@@ -51,7 +52,7 @@
                         <h4 class="list-group-item-heading">Durata:</h4>
                         <p class="list-group-item-text">{{current.length}}</p>
                     </div>
-                    <button type="button" class="btn btn-default navbar-btn" ng-click="sendEmail(current.title + ' ' + current.description)">
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="sendEmail(current.title + ' - ' + current.description)">
                         Iscriviti
                     </button>
                 </div>
