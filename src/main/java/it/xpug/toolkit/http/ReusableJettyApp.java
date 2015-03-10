@@ -36,7 +36,7 @@ public class ReusableJettyApp {
 				new DefaultHandler()
 			});
 			server.setHandler(handlers);
-			server.start();
+			server.doStart();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
