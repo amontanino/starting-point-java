@@ -1,46 +1,70 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="coursesApp">
 <head>
-    <title></title>
+	<title>Fittizia</title>
 	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
     <script src="../javascripts/lib/angular.min.js"></script>
     <script src="../javascripts/courses.js"></script>
 </head>
 <body ng-controller="coursesController">
-    <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="courses.html">Corsi</a></li>
-    </ul>   
-
+    <div class="header">
+        <div class="logo">
+            <img src="/images/logo.png" />
+        </div>
+        <div class="login">
+            <a href="#">Login </a>
+        </div>
+    </div>
+    <div class="main_col">
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="courses.html">Corsi</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
     <ul ng-repeat="current in listOfCourses">
         <li>		
 			<div class="list-group">
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Titolo:</h4>
-				<p class="list-group-item-text">{{current.title}}</p>
-			  </p>
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Descrizione:</h4>
-				<p class="list-group-item-text">{{current.description}}</p>
-			  </p>
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Docente:</h4>
-				<p class="list-group-item-text">{{current.teacher}}</p>
-			  </p>
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Prezzo:</h4>
-				<p class="list-group-item-text">{{current.price}}</p>
-			  </p>
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Data:</h4>
-				<p class="list-group-item-text">{{current.startDate}}</p>
-			  </p>
-			  <p href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">Durata:</h4>
-				<p class="list-group-item-text">{{current.length}}</p>
-			  </p>
-			</div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Titolo:</h4>
+                        <p class="list-group-item-text">{{current.title}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Descrizione:</h4>
+                        <p class="list-group-item-text">{{current.description}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Docente:</h4>
+                        <p class="list-group-item-text">{{current.teacher}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Prezzo:</h4>
+                        <p class="list-group-item-text">{{current.price}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Data:</h4>
+                        <p class="list-group-item-text">{{current.startDate}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Durata:</h4>
+                        <p class="list-group-item-text">{{current.length}}</p>
+                    </div>
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="sendEmail(current.title + ' ' + current.description)">
+                        Iscriviti
+                    </button>
+                </div>
         </li>
     </ul>
+
+    </div>
+    <div class="footer">
+        <span class="important">Fittizia Srl </span>- Via Lanzoni 13, 27010, Giussago (PV) - Italia <br />
+        Telefono <span class="important">0382 23456778</span> <br />
+        Partita IVA: <span class="important">IT033868135678868 </span><br />
+        Contattaci a <span class="important"><a href="mailto:informazioni@fittizia.it">info.fittizia@gmail.com</a></span>
+    </div>
 </body>
 </html>
+

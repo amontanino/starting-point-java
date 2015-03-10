@@ -33,3 +33,16 @@ input[type="text"] {
 .menu {
 	background: yellow;
 }
+
+.footer {
+    text-align: center;
+    background: yellow;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+}
+
+.important {
+font-weight: bold;
+}

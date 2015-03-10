@@ -1,15 +1,14 @@
 package it.xpug.toolkit.http;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
-import java.io.*;
-import java.net.*;
+import org.junit.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.io.*;
+import java.net.URL;
 
-import org.junit.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 public class ReusableJettyAppTest {
 

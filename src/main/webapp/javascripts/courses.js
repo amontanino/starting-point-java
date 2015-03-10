@@ -1,6 +1,7 @@
 angular.module('coursesApp', [])
-    .controller('coursesController', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+    .controller('coursesController', ['$scope', '$rootScope', '$http', '$window', function ($scope, $rootScope, $http, $window) {
 
+		var contactEmail = 'info.fittizia@gmail.com';
         function elaborateResult(result) {
             $scope.listOfCourses = result;
         }
@@ -9,4 +10,11 @@ angular.module('coursesApp', [])
        elaborateResult(data);
        })
 
+	   $scope.sendEmail = function(subject) {
+			var link = "mailto:"+ contactEmail
+					 + "?subject=New%20email " + escape(subject); 
+
+			$window.location.href = link;
+		 };
+	   
     }]);
