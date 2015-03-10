@@ -25,6 +25,18 @@ input[type="text"] {
     width: 300px;
 }
 
+.logo img {
+    height: 250px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline;
+}
+
 .login {
 	float: right;
 	margin-right: 100px;
