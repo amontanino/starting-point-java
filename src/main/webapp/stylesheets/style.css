@@ -51,7 +51,7 @@ input[type="text"] {
 .footer {
     text-align: center;
     background: yellow;
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     bottom: 0;
     font-size: 16px;
