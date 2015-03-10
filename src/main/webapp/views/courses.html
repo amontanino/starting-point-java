@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="coursesApp">
 <head>
     <title></title>
+	<link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
     <script src="../javascripts/lib/angular.min.js"></script>
     <script src="../javascripts/courses.js"></script>
 </head>
@@ -12,15 +13,33 @@
     </ul>   
 
     <ul ng-repeat="current in listOfCourses">
-        <li>
-            <div>
-                Titolo = {{current.title}} <br />
-                Descrizione = {{current.description}} <br />
-                Docente = {{current.teacher}} <br />
-                Prezzo = {{current.price}} <br />
-                Data = {{current.startDate}} <br />
-                Durata = {{current.length}} <br />
-            </div>
+        <li>		
+			<div class="list-group">
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Titolo:</h4>
+				<p class="list-group-item-text">{{current.title}}</p>
+			  </p>
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Descrizione:</h4>
+				<p class="list-group-item-text">{{current.description}}</p>
+			  </p>
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Docente:</h4>
+				<p class="list-group-item-text">{{current.teacher}}</p>
+			  </p>
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Prezzo:</h4>
+				<p class="list-group-item-text">{{current.price}}</p>
+			  </p>
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Data:</h4>
+				<p class="list-group-item-text">{{current.startDate}}</p>
+			  </p>
+			  <p href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">Durata:</h4>
+				<p class="list-group-item-text">{{current.length}}</p>
+			  </p>
+			</div>
         </li>
     </ul>
 </body>
