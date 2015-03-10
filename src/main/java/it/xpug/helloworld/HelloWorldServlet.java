@@ -24,12 +24,12 @@ public class HelloWorldServlet extends HttpServlet {
 
 		response.setContentType("application/json");
 		PrintWriter writer = response.getWriter();
-		String json = "[{\"title\": \"test corso\", \"description\": \"corso che parla di JAVA\",\"teacher\": \"docente\", \"price\": \"120euro\", \"date\":\"23/11/2015\"}," +
-				"{\"title\": \"test corso 2\", \"description\": \"corso che parla di C#\",\"teacher\": \"docente2\", \"price\": \"140euro\", \"date\":\"28/11/2015\"}," +
-				"{\"title\": \"test corso 3\", \"description\": \"corso che parla di Ruby\",\"teacher\": \"docente3\", \"price\": \"540euro\", \"date\":\"28/12/2015\"}," +
-				"{\"title\": \"test corso xp\", \"description\": \"corso che parla di XP\",\"teacher\": \"docente4\", \"price\": \"640euro\", \"date\":\"1/11/2015\"}" +
+		String json = "[{\"title\": \"test corso\", \"id\": \"1029\", \"description\": \"corso che parla di JAVA\",\"teacher\": \"docente\", \"price\": \"120euro\", \"startDate\":\"23/11/2015\", \"length\": \"5days\"}," +
+				"{\"title\": \"test corso 2\", \"id\": \"1020\", \"description\": \"corso che parla di C#\",\"teacher\": \"docente2\", \"price\": \"140euro\", \"startDate\":\"28/11/2015\", \"length\": \"3days\"}," +
+				"{\"title\": \"test corso 3\", \"id\": \"1019\", \"description\": \"corso che parla di Ruby\",\"teacher\": \"docente3\", \"price\": \"540euro\", \"startDate\":\"28/12/2015\", \"length\": \"1days\"}," +
+				"{\"title\": \"test corso xp\", \"id\": \"1099\", \"description\": \"corso che parla di XP\",\"teacher\": \"docente4\", \"price\": \"640euro\", \"startDate\":\"1/11/2015\", \"length\": \"2days\"}" +
 				"]";
-		writer.write(format(json, seven()));
+		writer.write(format(json, seven())); //import statico per format
 		writer.close();
 	}
 
