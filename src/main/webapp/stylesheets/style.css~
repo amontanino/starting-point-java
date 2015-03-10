@@ -1,11 +1,14 @@
+html {
+	background: #b6adae;
+}
 body {
   font-family: arial, sans-serif;
-  font-size: 10pt;
+  font-size: 16pt;
   color: #444;
 }
 
 #content {
-  width: 50em;
+  width: 100%;
   margin: 0px auto;
 }
 
@@ -25,7 +28,59 @@ input[type="text"] {
     width: 300px;
 }
 
+.logo img {
+    height: 250px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline;
+}
+
 .login {
 	float: right;
 	margin-right: 100px;
+}
+
+.menu {
+	background: #f7fd4a;
+	width: 100%;
+	display: inline-block;
+}
+
+.footer {
+    text-align: center;
+    background: #f7fd4a;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+}
+
+.important {
+font-weight: bold;
+}
+
+.topCourses {
+    display: inline-block;
+	width: 100%;
+}
+
+.topCoursesTitle{
+	width: 97%;
+	border: 1px solid black;
+	padding: 10px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.course {
+	width: 33%;
+	float: left;
+	border: 1px solid black;
+	padding: 10px;
+	box-sizing: border-box;
 }
