@@ -20,9 +20,9 @@ angular.module('registrationApp', [])
 
         $scope.register = function ()
         {
-            //$http.post('', $scope.registration)
-            //    .success(function () { })
-            //    .error(function () { });
+            $http.post('/helloworld', $scope.registration)
+                .success(function () { alert('Richiesta iscrizione inviata'); })
+                .error(function () { alert('Richiesta iscrizione errata'); });
         }
 
     }]);
