@@ -10,11 +10,7 @@ angular.module('coursesApp', [])
        elaborateResult(data);
        })
 
-	   $scope.sendEmail = function(subject) {
-			var link = "mailto:"+ contactEmail
-					 + "?subject=" + escape(subject); 
-
-			$window.location.href = link;
-		 };
-	   
+       $scope.redirectToRegisterForm = function (idCorso, title) {
+           $window.location = 'registration.html?id=' + idCorso + '&title=' + title;
+       }
     }]);

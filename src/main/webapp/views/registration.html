@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="registrationApp">
+<head>
+    <title>Fittizia</title>
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="../stylesheets/style.css" rel="stylesheet" />
+    <script src="../javascripts/lib/angular.min.js"></script>
+    <script src="../javascripts/registration.js"></script>
+</head>
+<body ng-controller="registrationController">
+    <div class="header">
+        <div class="logo">
+            <img src="/images/logo.png" />
+        </div>
+        <div class="login">
+            <a href="#">Login </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Fittizia</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="courses.html">Corsi</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="content">
+        <form role="form" style="margin-left:100px; margin-top:30px;">
+            <div class="form-group">
+                <label class="control-label">Titolo Corso</label>
+                <input type="text" class="form-control" placeholder="Docente" ng-model="courseName" ng-readonly="true">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nome</label>
+                <input type="text" class="form-control" placeholder="Titolo" ng-model="registration.name">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cognome</label>
+                <input type="text" class="form-control" placeholder="Descrizione" ng-model="registration.surname">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="text" class="form-control" placeholder="Docente" ng-model="registration.email">
+            </div>
+            <button type="button" class="btn btn-default navbar-btn" ng-click="register()">
+                Iscriviti
+            </button>
+        </form>
+    </div>
+    <div class="footer">
+        <span class="important">Fittizia Srl </span>- Via Lanzoni 13, 27010, Giussago (PV) - Italia <br />
+        Telefono <span class="important">0382 23456778</span> <br />
+        Partita IVA: <span class="important">IT033868135678868 </span><br />
+        Contattaci a <span class="important"><a href="mailto:informazioni@fittizia.it">info.fittizia@gmail.com</a></span>
+    </div>
+</body>
+</html>
+

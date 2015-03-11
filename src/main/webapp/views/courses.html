@@ -66,9 +66,9 @@
                         <h4 class="list-group-item-heading">Durata:</h4>
                         <p class="list-group-item-text">{{current.length}}</p>
                     </div>
-                    <button type="button" class="btn btn-default navbar-btn" ng-click="sendEmail(current.title + ' - ' + current.description)">
-                        Iscriviti
-                    </button>
+                <button type="button" class="btn btn-default navbar-btn" ng-click="redirectToRegisterForm(current.id, current.title)">
+                    Iscriviti
+                </button>
                 </div>
         </li>
     </ul>
