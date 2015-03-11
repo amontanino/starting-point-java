@@ -1,0 +1,185 @@
+Script started on mer 11 mar 2015 09:54:37 CET
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ 
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ script/createe_databases.sh 
+createuser: creation of new role failed: ERROR:  role "myproject" already exists
+doing myproject_development
+ALTER ROLE
+CREATE TABLE
+INSERT 0 1
+CREATE TABLE
+UPDATE 1
+CREATE TABLE
+UPDATE 1
+GRANT
+GRANT
+GRANT
+doing myproject_test
+ALTER ROLE
+CREATE TABLE
+INSERT 0 1
+CREATE TABLE
+UPDATE 1
+CREATE TABLE
+UPDATE 1
+GRANT
+GRANT
+GRANT
+OK
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ psql myprojecct_test 
+psql (9.3.6)
+Type "help" for help.
+
+myproject_test=# SELECT *
+myproject_test-# from co[Kourse
+myproject_test-# ;
+ id | email | name | surname 
+----+-------+------+---------
+(0 rows)
+
+myproject_test=# \q
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   script/create_databases.sh[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31msrc/main/sql/002_create_course.sql[m
+	[31msrc/main/sql/002_create_course.sql~[m
+	[31mtypescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git add -A
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git commit
+[?1049h[1;24r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6 File: ...ace/starting-point-java/.git/COMMIT_EDITMSG           [4;1H(B[m# Please enter the commit message for your changes. Lines starting[5d# with '#' will be ignored, and an empty message aborts the commit.[6d# On branch master[7d# Your branch is up-to-date with 'origin/master'.[8d#[9d# Changes to be committed:[10d#[9Gmodified:   script/create_databases.sh[11d#[9Gnew file:   src/main/sql/002_create_course.sql[12d#[9Gnew file:   src/main/sql/002_create_course.sql~[13d#[9Gnew file:   typescript[14d#[22;32H(B[0;7m[ Read 12 lines ][23d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[1;71H(B[0;7mModified[3d(B[mcreation table cpour    ou[22d[K[3;19Hrzs  se[22d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y(B[m Yes[K[24d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[22;62H(B[0;7mFile Name to Write:$TMSG                                    [23d^G(B[m Get Help[23;21H(B[0;7mM-D(B[m DOS Format[41G(B[0;7mM-A(B[m Append[23;61H(B[0;7mM-B(B[m Backup File[24d(B[0;7m^C(B[m Cancel[17G    (B[0;7mM-M(B[m Mac Format[41G(B[0;7mM-P(B[m Prepend[22;25H[23d[39;49m(B[m[J[1;71H(B[0;7m        [22;31H(B[m[1K (B[0;7m[ Wrote 12 lines ](B[m[K[24;80H[24;1H[?1049l[?1l>[master 89d2a15] creation table course
+ 4 files changed, 62 insertions(+), 40 deletions(-)
+ create mode 100644 src/main/sql/002_create_course.sql
+ create mode 100644 src/main/sql/002_create_course.sql~
+ create mode 100644 typescript
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': Alb93
+Password for 'https://Alb93@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/amontanino/starting-point-java.git/'
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': Alb93
+Password for 'https://Alb93@github.com': 
+Counting objects: 19, done.
+Delta compression using up to 4 threads.
+Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
+Writing objects:  11% (1/9)   Writing objects:  22% (2/9)   Writing objects:  33% (3/9)   Writing objects:  44% (4/9)   Writing objects:  55% (5/9)   Writing objects:  66% (6/9)   Writing objects:  77% (7/9)   Writing objects: 100% (9/9)   Writing objects: 100% (9/9), 1.20 KiB | 0 bytes/s, done.
+Total 9 (delta 5), reused 0 (delta 0)
+To https://github.com/amontanino/starting-point-java.git
+   1b41f08..89d2a15  master -> master
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git pushcommitadd -Astatus
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   src/main/java/it/xpug/helloworld/HelloWorldServlet.java[m
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ git pull
+remote: Counting objects: 20, done.[K
+remote: Compressing objects:   9% (1/11)   [Kremote: Compressing objects:  18% (2/11)   [Kremote: Compressing objects:  27% (3/11)   [Kremote: Compressing objects:  36% (4/11)   [Kremote: Compressing objects:  45% (5/11)   [Kremote: Compressing objects:  54% (6/11)   [Kremote: Compressing objects:  63% (7/11)   [Kremote: Compressing objects:  72% (8/11)   [Kremote: Compressing objects:  81% (9/11)   [Kremote: Compressing objects:  90% (10/11)   [Kremote: Compressing objects: 100% (11/11)   [Kremote: Compressing objects: 100% (11/11), done.[K
+Unpacking objects:   5% (1/20)   Unpacking objects:  10% (2/20)   Unpacking objects:  15% (3/20)   Unpacking objects:  20% (4/20)   Unpacking objects:  25% (5/20)   Unpacking objects:  30% (6/20)   Unpacking objects:  35% (7/20)   Unpacking objects:  40% (8/20)   Unpacking objects:  45% (9/20)   Unpacking objects:  50% (10/20)   Unpacking objects:  55% (11/20)   Unpacking objects:  60% (12/20)   Unpacking objects:  65% (13/20)   Unpacking objects:  70% (14/20)   Unpacking objects:  75% (15/20)   Unpacking objects:  80% (16/20)   Unpacking objects:  85% (17/20)   Unpacking objects:  90% (18/20)   Unpacking objects:  95% (19/20)   Unpacking objects: 100% (20/20)   Unpacking objects: 100% (20/20), done.
+remote: Total 20 (delta 12), reused 17 (delta 9), pack-reused 0[K
+From https://github.com/amontanino/starting-point-java
+   89d2a15..a516338  master     -> origin/master
+Updating 89d2a15..a516338
+Fast-forward
+ src/main/webapp/javascripts/courses.js      | 10 [32m++[m[31m--[m
+ src/main/webapp/javascripts/registration.js | 29 [32m++++++++++++[m
+ src/main/webapp/stylesheets/style.css       |  5 [32m++[m
+ src/main/webapp/views/courses.html          |  6 [32m+[m[31m--[m
+ src/main/webapp/views/registration.html     | 72 [32m+++++++++++++++++++++++++++++[m
+ 5 files changed, 112 insertions(+), 10 deletions(-)
+ create mode 100644 src/main/webapp/javascripts/registration.js
+ create mode 100644 src/main/webapp/views/registration.html
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ psql myprojecct_test 
+psql (9.3.6)
+Type "help" for help.
+
+myproject_test=# select *
+myproject_test-# from course
+myproject_test-# ;
+ id | email | name | surname 
+----+-------+------+---------
+(0 rows)
+
+myproject_test=# 
+myproject_test=# select *
+from course
+;
+ id | email | name | surname 
+----+-------+------+---------
+(0 rows)
+
+myproject_test=# select *
+from course
+;[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C7[K/[K\q
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/starting-point-javaalberto@alberto-HP-G62-Notebook-PC:~/workspace/starting-point-java$ ls
+[0m[01;34mdoc[0m      Procfile   [01;34mscript[0m  [01;34mtarget[0m                typescript
+pom.xml  README.md  [01;34msrc[0m     the style of courses
+]0;alberto@alberto-HP-G62-Notebook-PC: ~/workspace/sta

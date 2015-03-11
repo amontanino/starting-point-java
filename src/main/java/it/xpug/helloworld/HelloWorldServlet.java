@@ -36,4 +36,12 @@ public class HelloWorldServlet extends HttpServlet {
 	private Object seven() {
 		return database.selectOneValue("select 3+4");
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+				super.doPost(req, resp);
+				database.execute("insert into course values ('1','agsjgos@gmail.com','alb','dg')", new String[0]);
+				System.out.println("sgsg");
+	}
 }

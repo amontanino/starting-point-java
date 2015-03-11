@@ -1,6 +1,7 @@
 package it.xpug.helloworld;
 
 import static java.lang.Integer.valueOf;
+import it.xpug.fittizia.FittiziaAppServlet;
 import it.xpug.toolkit.db.Database;
 import it.xpug.toolkit.db.DatabaseConfiguration;
 import it.xpug.toolkit.http.ReusableJettyApp;
@@ -13,7 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 		DatabaseConfiguration configuration = new DatabaseConfiguration(getDatabaseUrl());
 		Database database = new Database(configuration);
-		HelloWorldServlet servlet = new HelloWorldServlet(database);
+		FittiziaAppServlet servlet = new FittiziaAppServlet();
 		ReusableJettyApp app = new ReusableJettyApp(servlet);
 		app.start(getPort(), "src/main/webapp");
 	}
