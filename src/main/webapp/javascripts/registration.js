@@ -20,7 +20,7 @@ angular.module('registrationApp', [])
 
         $scope.register = function ()
         {
-            $http.post('/api/attendants', JSON.stringify( $scope.registration))
+            $http.post('/api/attendants', $scope.registration)
                 .success(function () { alert('Richiesta iscrizione inviata'); })
                 .error(function () { alert('Richiesta iscrizione errata'); });
         }

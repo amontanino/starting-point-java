@@ -42,8 +42,6 @@ public class FittiziaAppServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		if (req.getRequestURI().equals("/api/attendants")) {
-			try {
-				
 				System.out.println(req.getParameterMap().keySet());
 				
 				fittizia.addParameter(Attendant.COURSE_ID,
@@ -55,13 +53,10 @@ public class FittiziaAppServlet extends HttpServlet {
 				fittizia.addParameter(Attendant.EMAIL,
 						req.getParameter(Attendant.EMAIL));
 				fittizia.post("/api/attendants");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 		} else {
 			// TODO aggiunta corso
-		}
-
+		}		
 	}
 
 }
