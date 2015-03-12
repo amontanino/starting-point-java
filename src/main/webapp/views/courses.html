@@ -39,9 +39,9 @@
   </div><!-- /.container-fluid -->
 </nav>
     <div class="content">
-    <ul ng-repeat="current in listOfCourses">
-        <li>		
-			<div class="list-group">
+        <ul ng-repeat="course in listOfAttendants">
+            <li>
+                <div class="list-group">
                     <div class="list-group-item">
                         <h4 class="list-group-item-heading">Titolo:</h4>
                         <p class="list-group-item-text">{{current.title}}</p>
@@ -66,12 +66,12 @@
                         <h4 class="list-group-item-heading">Durata:</h4>
                         <p class="list-group-item-text">{{current.length}}</p>
                     </div>
-                <button type="button" class="btn btn-default navbar-btn" ng-click="redirectToRegisterForm(current.id, current.title)">
-                    Iscriviti
-                </button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="redirectToRegisterForm(current.id, current.title)">
+                        Iscriviti
+                    </button>
                 </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
 
     </div>
     <div class="footer">

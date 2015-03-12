@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="registrationApp">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="listAttendantsApp">
 <head>
     <title>Fittizia</title>
     <link href="../stylesheets/bootstrap.min.css" rel="stylesheet" />
     <link href="../stylesheets/style.css" rel="stylesheet" />
     <script src="../javascripts/lib/angular.min.js"></script>
-    <script src="../javascripts/registration.js"></script>
+    <script src="../javascripts/listAttendants.js"></script>
 </head>
-<body ng-controller="registrationController">
+<body ng-controller="listAttendantsController">
     <div class="header">
         <div class="logo">
             <img src="/images/logo.png" />
@@ -39,27 +39,30 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="content">
-        <form role="form" style="margin-left:100px; margin-top:30px;">
-            <div class="form-group">
-                <label class="control-label">Titolo Corso</label>
-                <input type="text" class="form-control" placeholder="Titolo" ng-model="courseName" ng-readonly="true">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Nome</label>
-                <input type="text" class="form-control" placeholder="Nome" ng-model="registration.first_name">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Cognome</label>
-                <input type="text" class="form-control" placeholder="Cognome" ng-model="registration.last_name">
-            </div>
-            <div class="form-group">
-                <label class="control-label">Email</label>
-                <input type="text" class="form-control" placeholder="Email" ng-model="registration.email">
-            </div>
-            <button type="button" class="btn btn-default navbar-btn" ng-click="register()">
-                Iscriviti
-            </button>
-        </form>
+
+        <ul ng-repeat="course in listOfAttendants">
+            <li>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Codice Corso:</h4>
+                        <p class="list-group-item-text">{{course.course_id}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Nome:</h4>
+                        <p class="list-group-item-text">{{course.first_name}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Cognome:</h4>
+                        <p class="list-group-item-text">{{course.last_name}}</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h4 class="list-group-item-heading">Email:</h4>
+                        <p class="list-group-item-text">{{course.email}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
     </div>
     <div class="footer">
         <span class="important">Fittizia Srl </span>- Via Lanzoni 13, 27010, Giussago (PV) - Italia <br />
