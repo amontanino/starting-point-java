@@ -11,7 +11,7 @@ angular.module('registrationApp', [])
             first_name: '',
             last_name: '',
             email: '',
-            id_corso: id
+            course_id: id
         };
 
         function getURLParameter(name) {
