@@ -54,7 +54,7 @@ public class FittiziaAppServlet extends HttpServlet {
 						req.getParameter(Attendant.EMAIL));
 				fittizia.post("/api/attendants");
 				
-				resp.sendRedirect("/views/registration.html");
+				resp.sendRedirect("/views/courses.html");
 		} else {
 			// TODO aggiunta corso
 		}		
