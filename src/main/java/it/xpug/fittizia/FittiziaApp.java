@@ -21,8 +21,10 @@ public class FittiziaApp {
 						.format("{\"course_id\": \"%s\", \"first_name\": \"%s\", \"last_name\": \"%s\", \"email\": \"%s\", \"num_attendants\": %d, \"is_company\": \"%s\"},",
 								attendant.getCourseId(),
 								attendant.getFirstName(),
-								attendant.getLastName(), attendant.getEmail()
-								,attendant.getNumOfAttendants(), attendant.isCompany());
+								attendant.getLastName(), 
+								attendant.getEmail(),
+								attendant.getNumOfAttendants(), 
+								attendant.isCompany());
 			}
 
 			json = json.substring(0, json.length() - 1);

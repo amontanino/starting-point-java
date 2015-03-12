@@ -53,11 +53,14 @@ public class FittiziaAppServlet extends HttpServlet {
 					req.getParameter(Attendant.EMAIL));
 
 			String numOfAttendants = "1";
+
 			if (req.getParameter(Attendant.NUM_ATTENDANTS) != null) {
 				numOfAttendants = req.getParameter(Attendant.NUM_ATTENDANTS);
 			} 			
 			fittizia.addParameter(Attendant.NUM_ATTENDANTS,
 					numOfAttendants);
+			
+			System.out.println("aaaaaaaaaaaaaaa"+ numOfAttendants );
 			String isCompany = "false";
 			if (req.getParameter(Attendant.IS_COMPANY) != null) {
 				isCompany = req.getParameter(Attendant.IS_COMPANY);

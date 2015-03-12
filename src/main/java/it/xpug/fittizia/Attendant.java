@@ -16,19 +16,15 @@ public class Attendant {
 	public static final String NUM_ATTENDANTS = "num_attendants";
 	public static final String IS_COMPANY = "is_company";
 
-	public static final int SINGLE_ATTENDANT = 1;
-
 	public Attendant(String firstName, String lastName, String email,
 			String courseId, int numOfAttendants, boolean isCompany) {
 		super();
-		if (!isCompany) {
-			forceNumOfAttendants();
-		}
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.courseId = courseId;
-		company = isCompany;
+		this.numOfAttendants = numOfAttendants;
+		this.company = isCompany;
 	}
 
 	public String getFirstName() {
@@ -43,9 +39,6 @@ public class Attendant {
 		return company;
 	}
 
-	public void forceNumOfAttendants() {
-		this.numOfAttendants = SINGLE_ATTENDANT;
-	}
 
 	public String getLastName() {
 		return lastName;
