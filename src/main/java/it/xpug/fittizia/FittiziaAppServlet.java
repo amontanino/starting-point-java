@@ -11,15 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class FittiziaAppServlet extends HttpServlet {
+
 	private List<Attendant> attendants = new ArrayList<Attendant>();
 	private FittiziaApp fittizia = new FittiziaApp(attendants);
+	public static final String URL = "/api/attendants";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		if (req.getRequestURI().equals("/api/attendants")) {
+		if (req.getRequestURI().equals(URL)) {
 			try {
-				resp.getWriter().write(fittizia.get("/api/attendants"));
+				resp.getWriter().write(fittizia.get(URL));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -39,22 +41,36 @@ public class FittiziaAppServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		if (req.getRequestURI().equals("/api/attendants")) {
-				
-				fittizia.addParameter(Attendant.COURSE_ID,
-						req.getParameter(Attendant.COURSE_ID));
-				fittizia.addParameter(Attendant.FIRST_NAME,
-						req.getParameter(Attendant.FIRST_NAME));
-				fittizia.addParameter(Attendant.LAST_NAME,
-						req.getParameter(Attendant.LAST_NAME));
-				fittizia.addParameter(Attendant.EMAIL,
-						req.getParameter(Attendant.EMAIL));
-				fittizia.post("/api/attendants");
-				
-				resp.sendRedirect("/views/courses.html");
+		if (req.getRequestURI().equals(URL)) {
+
+			fittizia.addParameter(Attendant.COURSE_ID,
+					req.getParameter(Attendant.COURSE_ID));
+			fittizia.addParameter(Attendant.FIRST_NAME,
+					req.getParameter(Attendant.FIRST_NAME));
+			fittizia.addParameter(Attendant.LAST_NAME,
+					req.getParameter(Attendant.LAST_NAME));
+			fittizia.addParameter(Attendant.EMAIL,
+					req.getParameter(Attendant.EMAIL));
+
+			String numOfAttendants = "1";
+			if (req.getParameter(Attendant.NUM_ATTENDANTS) != null) {
+				numOfAttendants = req.getParameter(Attendant.NUM_ATTENDANTS);
+			} 			
+			fittizia.addParameter(Attendant.NUM_ATTENDANTS,
+					numOfAttendants);
+			String isCompany = "false";
+			if (req.getParameter(Attendant.IS_COMPANY) != null) {
+				isCompany = req.getParameter(Attendant.IS_COMPANY);
+			} 
+
+			fittizia.addParameter(Attendant.IS_COMPANY, isCompany);
+
+			fittizia.post(URL);
+
+			resp.sendRedirect("/views/courses.html");
 		} else {
 			// TODO aggiunta corso
-		}		
+		}
 	}
 
 }
