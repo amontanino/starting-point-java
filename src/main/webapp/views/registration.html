@@ -32,7 +32,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="courses.html">Corsi</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -42,7 +42,7 @@
         <form role="form" style="margin-left:100px; margin-top:30px;" method="POST" action="/api/attendants">
             <div class="form-group">
                 <label class="control-label">Iscrizione al Corso: </label> {{courseName}}
-                <input type="hidden" name="course_id" class="form-control" ng-model="courseName" ng-readonly="true">
+                <input type="hidden" name="course_id" class="form-control" ng-model="courseName" ng-readonly="true" value="{{courseName}}">
             </div>
             <div class="form-group">
                 <label class="control-label">Nome</label>

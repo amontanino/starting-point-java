@@ -42,7 +42,6 @@ public class FittiziaAppServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		if (req.getRequestURI().equals("/api/attendants")) {
-				System.out.println(req.getParameterMap().keySet());
 				
 				fittizia.addParameter(Attendant.COURSE_ID,
 						req.getParameter(Attendant.COURSE_ID));
