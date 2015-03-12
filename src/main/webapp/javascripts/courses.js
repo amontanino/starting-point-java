@@ -13,4 +13,8 @@ angular.module('coursesApp', [])
        $scope.redirectToRegisterForm = function (idCorso, title) {
            $window.location = 'registration.html?id=' + idCorso + '&title=' + title;
        }
+       
+       $scope.redirectToCompanyRegisterForm= function (idCorso, title) {
+           $window.location = 'companyregistration.html?id=' + idCorso + '&title=' + title;
+       }
     }]);
