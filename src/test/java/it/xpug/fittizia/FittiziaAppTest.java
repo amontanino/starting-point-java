@@ -39,7 +39,7 @@ public class FittiziaAppTest {
 				"ciccio@pasticcio.gmail");
 		fittizia.getAttendants().add(attendant);
 		assertEquals(
-				"[{course_id: '123', first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'}]",
+				"[{\"course_id\": \"123\", \"first_name\": \"Ciccio\", \"last_name\": \"Pasticcio\", \"email\": \"ciccio@pasticcio.gmail\"}]",
 				fittizia.get("/api/attendants"));
 
 	}
@@ -53,7 +53,7 @@ public class FittiziaAppTest {
 		fittizia.getAttendants().add(attendant1);
 		fittizia.getAttendants().add(attendant2);
 		assertEquals(
-				"[{course_id: '124', first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'},{course_id: '124', first_name: 'Ciccia', last_name: 'Pasticcia', email: 'ciccia@pasticcia.gmail'}]",
+				"[{\"course_id\": \"124\", \"first_name\": \"Ciccio\", \"last_name\": \"Pasticcio\", \"email\": \"ciccio@pasticcio.gmail\"},{\"course_id\": \"124\", \"first_name\": \"Ciccia\", \"last_name\": \"Pasticcia\", \"email\": \"ciccia@pasticcia.gmail\"}]",
 				fittizia.get("/api/attendants"));
 //
 	}

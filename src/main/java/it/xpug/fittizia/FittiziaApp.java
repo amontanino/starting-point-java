@@ -18,7 +18,7 @@ public class FittiziaApp {
 		if (attendants != null && attendants.size() != 0) {
 			for (Attendant attendant : attendants) {
 				json += String.format(
-						"{course_id: '%s', first_name: '%s', last_name: '%s', email: '%s'},",
+						"{\"course_id\": \"%s\", \"first_name\": \"%s\", \"last_name\": \"%s\", \"email\": \"%s\"},",
 						attendant.getCourseId(), attendant.getFirstName(), attendant.getLastName(),
 						attendant.getEmail());
 			}
