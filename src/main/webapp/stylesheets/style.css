@@ -53,6 +53,7 @@ input[type="text"] {
 }
 
 .footer {
+	position:fixed;
     text-align: center;
     background: #f7fd4a;
     /*position: absolute;*/
