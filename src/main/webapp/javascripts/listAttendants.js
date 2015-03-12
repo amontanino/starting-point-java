@@ -2,7 +2,15 @@ angular.module('listAttendantsApp', [])
     .controller('listAttendantsController', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
 
 $http.get('/api/attendants').success(function(data){
-       $scope.listOfAttendants = data;
+	var coursesAttendants = {};
+	for (var i = 0; i < data.length; i ++){
+		if (coursesAttendants[data[i].course_id] === undefined) { 
+			coursesAttendants[data[i].course_id] = [data[i]]; 
+		} else {
+			coursesAttendants[data[i].course_id].push(data[i]); 
+		}
+	}
+	$scope.listOfAttendants = [coursesAttendants];
        }).error(function (data, status) { alert(data); });
 
     }]);
