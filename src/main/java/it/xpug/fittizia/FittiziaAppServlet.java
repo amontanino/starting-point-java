@@ -1,7 +1,5 @@
 package it.xpug.fittizia;
 
-import static java.lang.String.format;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -28,10 +26,10 @@ public class FittiziaAppServlet extends HttpServlet {
 		} else {
 			resp.setContentType("application/json");
 			PrintWriter writer = resp.getWriter();
-			String json = "[{\"title\": \"test corso\", \"id\": \"1029\", \"description\": \"corso che parla di JAVA\",\"teacher\": \"docente\", \"price\": \"120euro\", \"startDate\":\"23/11/2015\", \"length\": \"5days\"},"
-					+ "{\"title\": \"test corso 2\", \"id\": \"1020\", \"description\": \"corso che parla di C#\",\"teacher\": \"docente2\", \"price\": \"140euro\", \"startDate\":\"28/11/2015\", \"length\": \"3days\"},"
-					+ "{\"title\": \"test corso 3\", \"id\": \"1019\", \"description\": \"corso che parla di Ruby\",\"teacher\": \"docente3\", \"price\": \"540euro\", \"startDate\":\"28/12/2015\", \"length\": \"1days\"},"
-					+ "{\"title\": \"test corso xp\", \"id\": \"1099\", \"description\": \"corso che parla di XP\",\"teacher\": \"docente4\", \"price\": \"640euro\", \"startDate\":\"1/11/2015\", \"length\": \"2days\"}"
+			String json = "[{\"title\": \"test corso\", \"id\": \"1029\", \"description\": \"corso che parla di JAVA\",\"teacher\": \"docente\", \"price\": \"120 euro\", \"startDate\":\"23/11/2015\", \"length\": \"5 days\"},"
+					+ "{\"title\": \"test corso 2\", \"id\": \"1020\", \"description\": \"corso che parla di C#\",\"teacher\": \"docente2\", \"price\": \"140 euro\", \"startDate\":\"28/11/2015\", \"length\": \"3 days\"},"
+					+ "{\"title\": \"test corso 3\", \"id\": \"1019\", \"description\": \"corso che parla di Ruby\",\"teacher\": \"docente3\", \"price\": \"540 euro\", \"startDate\":\"28/12/2015\", \"length\": \"1 day\"},"
+					+ "{\"title\": \"test corso xp\", \"id\": \"1099\", \"description\": \"corso che parla di XP\",\"teacher\": \"docente4\", \"price\": \"640 euro\", \"startDate\":\"1/11/2015\", \"length\": \"2 days\"}"
 					+ "]";
 			writer.write(json);
 			writer.close();
