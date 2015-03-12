@@ -44,8 +44,10 @@ public class FittiziaAppServlet extends HttpServlet {
 		if (req.getRequestURI().equals("/api/attendants")) {
 			try {
 				
-				System.out.println(req.getParameterMap().keySet());
+//				System.out.println(req.getParameterMap().keySet());
 				
+				fittizia.addParameter(Attendant.COURSE_ID,
+						req.getParameter(Attendant.COURSE_ID));
 				fittizia.addParameter(Attendant.FIRST_NAME,
 						req.getParameter(Attendant.FIRST_NAME));
 				fittizia.addParameter(Attendant.LAST_NAME,

@@ -18,8 +18,8 @@ public class FittiziaApp {
 		if (attendants != null && attendants.size() != 0) {
 			for (Attendant attendant : attendants) {
 				json += String.format(
-						"{first_name: '%s', last_name: '%s', email: '%s'},",
-						attendant.getFirstName(), attendant.getLastName(),
+						"{course_id: '%s', first_name: '%s', last_name: '%s', email: '%s'},",
+						attendant.getCourseId(), attendant.getFirstName(), attendant.getLastName(),
 						attendant.getEmail());
 			}
 
@@ -35,7 +35,7 @@ public class FittiziaApp {
 	}
 
 	public void post(String string) {
-		attendants.add(new Attendant(params.get(Attendant.FIRST_NAME), params
+		attendants.add(new Attendant(params.get(Attendant.COURSE_ID), params.get(Attendant.FIRST_NAME), params
 				.get(Attendant.LAST_NAME), params.get(Attendant.EMAIL)));
 	}
 

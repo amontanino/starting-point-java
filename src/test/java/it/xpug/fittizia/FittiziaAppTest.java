@@ -27,6 +27,7 @@ public class FittiziaAppTest {
 
 		fittizia.post("/api/attendants");
 		assertEquals(1, attendants.size());
+		assertEquals("123", attendants.get(0).getCourseId());
 		assertEquals("Mario", attendants.get(0).getFirstName());
 		assertEquals("Rossi", attendants.get(0).getLastName());
 		assertEquals("mario@rossi.com", attendants.get(0).getEmail());
@@ -34,25 +35,25 @@ public class FittiziaAppTest {
 
 	@Test
 	public void listWithOneAttendant() throws Exception {
-		Attendant attendant = new Attendant("Ciccio", "Pasticcio",
+		Attendant attendant = new Attendant("123", "Ciccio", "Pasticcio",
 				"ciccio@pasticcio.gmail");
 		fittizia.getAttendants().add(attendant);
 		assertEquals(
-				"[{first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'}]",
+				"[{course_id: '123', first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'}]",
 				fittizia.get("/api/attendants"));
 
 	}
 
 	@Test
 	public void listWithTwoAttendants() throws Exception {
-		Attendant attendant1 = new Attendant("Ciccio", "Pasticcio",
+		Attendant attendant1 = new Attendant("124", "Ciccio", "Pasticcio",
 				"ciccio@pasticcio.gmail");
-		Attendant attendant2 = new Attendant("Ciccia", "Pasticcia",
+		Attendant attendant2 = new Attendant("124", "Ciccia", "Pasticcia",
 				"ciccia@pasticcia.gmail");
 		fittizia.getAttendants().add(attendant1);
 		fittizia.getAttendants().add(attendant2);
 		assertEquals(
-				"[{first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'},{first_name: 'Ciccia', last_name: 'Pasticcia', email: 'ciccia@pasticcia.gmail'}]",
+				"[{course_id: '124', first_name: 'Ciccio', last_name: 'Pasticcio', email: 'ciccio@pasticcio.gmail'},{course_id: '124', first_name: 'Ciccia', last_name: 'Pasticcia', email: 'ciccia@pasticcia.gmail'}]",
 				fittizia.get("/api/attendants"));
 //
 	}
