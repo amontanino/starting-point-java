@@ -3,6 +3,7 @@ html {
 }
 body {
   font-family: arial, sans-serif;
+	background: #b6adae;
   font-size: 16pt;
   color: #444;
 }
@@ -83,4 +84,9 @@ font-weight: bold;
 	border: 1px solid black;
 	padding: 10px;
 	box-sizing: border-box;
+}
+
+ul
+{
+    list-style-type: none;
 }
