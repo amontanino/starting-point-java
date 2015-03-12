@@ -42,8 +42,9 @@
 
         <div ng-repeat="data in listOfAttendants">
         	<div ng-repeat="(key, courses) in data">
-        		<h3>{{key}}</h3>
-		         <ul ng-repeat="course in courses">
+        		<h2>{{key}}</h2>
+        		<h3>Numero totale partecipanti: {{courses.count}}</h3>
+		         <ul ng-repeat="course in courses.data">
 		            <li>
 		                <div class="list-group" style="display:inline-flex">
 		                    <div class="list-group-item">

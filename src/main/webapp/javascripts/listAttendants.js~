@@ -10,7 +10,6 @@ $http.get('/api/attendants').success(function(data){
 			coursesAttendants[data[i].course_id].push(data[i]); 
 		}
 	}
-	alert(JSON.stringify(coursesAttendants));
 	$scope.listOfAttendants = [coursesAttendants];
        }).error(function (data, status) { alert(data); });
 
