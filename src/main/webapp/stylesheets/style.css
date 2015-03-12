@@ -1,11 +1,13 @@
 html {
 	background: #b6adae;
+	height: 100%;
 }
 body {
   font-family: arial, sans-serif;
 	background: #b6adae;
   font-size: 16pt !important;
   color: #444;
+  height: 100%;
 }
 
 #content {
