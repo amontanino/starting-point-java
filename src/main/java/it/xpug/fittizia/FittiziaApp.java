@@ -21,9 +21,8 @@ public class FittiziaApp {
 						.format("{\"course_id\": \"%s\", \"first_name\": \"%s\", \"last_name\": \"%s\", \"email\": \"%s\", \"num_attendants\": %d, \"is_company\": \"%s\"},",
 								attendant.getCourseId(),
 								attendant.getFirstName(),
-								attendant.getLastName(), 
-								attendant.getEmail(),
-								attendant.getNumOfAttendants(), 
+								attendant.getLastName(), attendant.getEmail(),
+								attendant.getNumOfAttendants(),
 								attendant.isCompany());
 			}
 
@@ -39,11 +38,22 @@ public class FittiziaApp {
 	}
 
 	public void post(String string) {
-		attendants.add(new Attendant(params
-				.get(Attendant.FIRST_NAME), params.get(Attendant.LAST_NAME),
-				params.get(Attendant.EMAIL),params.get(Attendant.COURSE_ID), Integer.parseInt(params
-						.get(Attendant.NUM_ATTENDANTS)), Boolean
-						.parseBoolean(params.get(Attendant.IS_COMPANY))));
+		
+		String lastName = params.get(Attendant.LAST_NAME);
+		boolean isCompany = false;
+		
+		for (int i = 0; i < Integer.parseInt(params
+				.get(Attendant.NUM_ATTENDANTS)); i++) {
+			isCompany = Boolean
+					.parseBoolean(params.get(Attendant.IS_COMPANY));
+			if(isCompany) {
+				lastName = "Iscritto "+params.get(Attendant.FIRST_NAME)+ " #" + (i+1);
+			}
+			attendants.add(new Attendant(params.get(Attendant.FIRST_NAME),
+					lastName, params
+							.get(Attendant.EMAIL), params
+							.get(Attendant.COURSE_ID), 1, isCompany));
+		}
 	}
 
 	public List<Attendant> getAttendants() {

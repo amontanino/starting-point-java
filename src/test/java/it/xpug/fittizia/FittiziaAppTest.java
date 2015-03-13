@@ -11,7 +11,7 @@ public class FittiziaAppTest {
 
 	private List<Attendant> attendants = new ArrayList<Attendant>();
 	private FittiziaApp fittizia = new FittiziaApp(attendants);
-	
+
 	public static final String URL = "/api/attendants";
 
 	@Test
@@ -42,12 +42,12 @@ public class FittiziaAppTest {
 
 	@Test
 	public void listWithOneAttendant() throws Exception {
-		Attendant attendant = new Attendant("Ciccio", "Pasticcio", 
-				"ciccio@pasticcio.gmail","123", 1, false);
+		Attendant attendant = new Attendant("Ciccio", "Pasticcio",
+				"ciccio@pasticcio.gmail", "123", 1, false);
 		fittizia.getAttendants().add(attendant);
 		assertEquals(
 				"[{\"course_id\": \"123\", \"first_name\": \"Ciccio\", \"last_name\":"
-				+ " \"Pasticcio\", \"email\": \"ciccio@pasticcio.gmail\", \"num_attendants\": 1, \"is_company\": \"false\"}]",
+						+ " \"Pasticcio\", \"email\": \"ciccio@pasticcio.gmail\", \"num_attendants\": 1, \"is_company\": \"false\"}]",
 				fittizia.get(URL));
 
 	}
@@ -55,28 +55,35 @@ public class FittiziaAppTest {
 	@Test
 	public void listWithTwoAttendants() throws Exception {
 		Attendant attendant1 = new Attendant("Ciccio", "Pasticcio",
-				"ciccio@pasticcio.gmail","124", 1, false);
+				"ciccio@pasticcio.gmail", "124", 1, false);
 		Attendant attendant2 = new Attendant("Ciccia", "Pasticcia",
 				"ciccia@pasticcia.gmail", "124", 1, false);
 		fittizia.getAttendants().add(attendant1);
 		fittizia.getAttendants().add(attendant2);
 		assertEquals(
 				"[{\"course_id\": \"124\", \"first_name\": \"Ciccio\", \"last_name\": \"Pasticcio\", \"email\": \"ciccio@pasticcio.gmail\", \"num_attendants\": 1, \"is_company\": \"false\"},"
-				+ "{\"course_id\": \"124\", \"first_name\": \"Ciccia\", \"last_name\": \"Pasticcia\", \"email\": \"ciccia@pasticcia.gmail\", \"num_attendants\": 1, \"is_company\": \"false\"}]",
+						+ "{\"course_id\": \"124\", \"first_name\": \"Ciccia\", \"last_name\": \"Pasticcia\", \"email\": \"ciccia@pasticcia.gmail\", \"num_attendants\": 1, \"is_company\": \"false\"}]",
 				fittizia.get(URL));
 		//
 	}
-	
-	
 
 	@Test
 	public void addGroupAttendants() throws Exception {
-		
-		Attendant attendant1 = new Attendant("7pixel", "",
-				"info@7pixel","124", 3, true);
-		fittizia.getAttendants().add(attendant1);		
-		assertEquals("[{\"course_id\": \"124\", \"first_name\": \"7pixel\", \"last_name\": \"\","
-				+ " \"email\": \"info@7pixel\", \"num_attendants\": 3, \"is_company\": \"true\"}]",
+
+		fittizia.addParameter("course_id", "124");
+		fittizia.addParameter(Attendant.FIRST_NAME, "7pixel");
+		fittizia.addParameter(Attendant.LAST_NAME, "");
+		fittizia.addParameter(Attendant.EMAIL, "info@7pixel");
+		fittizia.addParameter(Attendant.NUM_ATTENDANTS, "3");
+		fittizia.addParameter(Attendant.IS_COMPANY, "true");
+
+		fittizia.post(URL);
+
+		assertEquals(
+				"[{\"course_id\": \"124\", \"first_name\": \"7pixel\", \"last_name\": \"Iscritto 7pixel #1\","
+						+ " \"email\": \"info@7pixel\", \"num_attendants\": 1, \"is_company\": \"true\"},{\"course_id\": \"124\", \"first_name\": \"7pixel\", \"last_name\": \"Iscritto 7pixel #2\","
+						+ " \"email\": \"info@7pixel\", \"num_attendants\": 1, \"is_company\": \"true\"},{\"course_id\": \"124\", \"first_name\": \"7pixel\", \"last_name\": \"Iscritto 7pixel #3\","
+						+ " \"email\": \"info@7pixel\", \"num_attendants\": 1, \"is_company\": \"true\"}]",
 				fittizia.get(URL));
 	}
 }
