@@ -60,22 +60,24 @@ public class FittiziaAppServlet extends HttpServlet {
 
 			if (req.getParameter(Attendant.NUM_ATTENDANTS) != null) {
 				numOfAttendants = req.getParameter(Attendant.NUM_ATTENDANTS);
-			} 			
-			fittizia.addParameter(Attendant.NUM_ATTENDANTS,
-					numOfAttendants);
-			
+			}
+			fittizia.addParameter(Attendant.NUM_ATTENDANTS, numOfAttendants);
+
 			String isCompany = "false";
 			if (req.getParameter(Attendant.IS_COMPANY) != null) {
 				isCompany = req.getParameter(Attendant.IS_COMPANY);
-			} 
+			}
 
 			fittizia.addParameter(Attendant.IS_COMPANY, isCompany);
 
 			fittizia.post(URL);
 
-			resp.sendRedirect("/views/courses.html");
-		} else {
-			// TODO aggiunta corso
+			if ("edit".equals(req.getParameter(FittiziaApp.CMD))) {
+				resp.sendRedirect("/views/listOfAttendants.html");
+			} else {
+				resp.sendRedirect("/views/courses.html");
+
+			}
 		}
 	}
 
