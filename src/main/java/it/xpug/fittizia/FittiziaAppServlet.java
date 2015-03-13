@@ -51,6 +51,10 @@ public class FittiziaAppServlet extends HttpServlet {
 					req.getParameter(Attendant.LAST_NAME));
 			fittizia.addParameter(Attendant.EMAIL,
 					req.getParameter(Attendant.EMAIL));
+			fittizia.addParameter(FittiziaApp.CMD,
+					req.getParameter(FittiziaApp.CMD));
+			fittizia.addParameter("newCourseId",
+					req.getParameter("newCourseId"));
 
 			String numOfAttendants = "1";
 
@@ -60,7 +64,6 @@ public class FittiziaAppServlet extends HttpServlet {
 			fittizia.addParameter(Attendant.NUM_ATTENDANTS,
 					numOfAttendants);
 			
-			System.out.println("aaaaaaaaaaaaaaa"+ numOfAttendants );
 			String isCompany = "false";
 			if (req.getParameter(Attendant.IS_COMPANY) != null) {
 				isCompany = req.getParameter(Attendant.IS_COMPANY);

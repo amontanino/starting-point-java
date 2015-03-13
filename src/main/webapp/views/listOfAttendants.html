@@ -40,30 +40,44 @@
     </nav>
     <div class="content">
 
-        <div ng-repeat="data in listOfAttendants">
+                <div ng-repeat="data in listOfAttendants">
         	<div ng-repeat="(key, courses) in data">
         		<h2>{{key}}</h2>
         		<h3>Numero totale partecipanti: {{courses.count}}</h3>
 		         <ul ng-repeat="course in courses.data">
 		            <li>
-		                <div class="list-group" style="display:inline-flex">
-		                    <div class="list-group-item">
-		                        <h4 class="list-group-item-heading">Nome:</h4>
-		                        <p class="list-group-item-text">{{course.first_name}}</p>
-		                    </div>
-		                    <div class="list-group-item">
-		                        <h4 class="list-group-item-heading">Cognome:</h4>
-		                        <p class="list-group-item-text">{{course.last_name}}</p>
-		                    </div>
-		                    <div class="list-group-item">
-		                        <h4 class="list-group-item-heading">Email:</h4>
-		                        <p class="list-group-item-text">{{course.email}}</p>
-		                    </div>
-		                    <div class="list-group-item">
-		                        <h4 class="list-group-item-heading">Num partecipanti:</h4>
-		                        <p class="list-group-item-text">{{course.num_attendants}}</p>
-		                    </div>
-		                </div>
+		            <form method="POST" action="/api/attendants">
+			                <div class="list-group" style="display:inline-flex">
+			                    <div class="list-group-item">
+			                        <h4 class="list-group-item-heading">Nome:</h4>
+			                        <p class="list-group-item-text">{{course.first_name}}</p>
+			                    </div>
+			                    <div class="list-group-item">
+			                        <h4 class="list-group-item-heading">Cognome:</h4>
+			                        <p class="list-group-item-text">{{course.last_name}}</p>
+			                    </div>
+			                    <div class="list-group-item">
+			                        <h4 class="list-group-item-heading">Email:</h4>
+			                        <p class="list-group-item-text">{{course.email}}</p>
+			                    </div>
+			                    <div class="list-group-item">
+			                        <h4 class="list-group-item-heading">Num partecipanti:</h4>
+			                        <p class="list-group-item-text">{{course.num_attendants}}</p>
+			                    </div>
+			                </div>
+							<div class="list-group-item">
+								 <select ng-model="incorrectlySelected"
+						                ng-options="opt as opt.label for opt in courseList">
+						           </select>
+						           <input type="hidden" name="CMD" value="edit" />
+						           	<input type="hidden" name="first_name" value="{{course.first_name}}" />
+						           	<input type="hidden" name="last_name" value="{{course.last_name}}" />
+						           	<input type="hidden" name="email" value="{{course.email}}" />
+						           	<input type="hidden" name="course_id" value="{{key}}" />
+						           	<input type="hidden" name="newCourseId" value="{{incorrectlySelected.value}}" />
+						           <button type="submit">Sposta</button>
+							</div>
+						</form>
 		            </li>
 		        </ul>
 	        </div>
